@@ -17,5 +17,5 @@ mv datasets data
 
 python RW_cugraph_benchmark.py
 
-5 you will get a bunch of .csv files
+5 you will get a bunch of .csv files.
 
