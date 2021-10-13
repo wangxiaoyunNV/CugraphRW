@@ -33,7 +33,7 @@ def run_dgl_rw(_G, _seeds, _depth):
     t2 = time.time() - t1
     return t2
 
-data = ['preferentialAttachment', 'dblp-2010', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP', 'coPapersCiteseer']
+data = ['preferentialAttachment', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP', 'coPapersCiteseer']
 
 for file_name in data:
     # dgl RW
