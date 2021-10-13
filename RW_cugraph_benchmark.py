@@ -43,7 +43,7 @@ def run_rw(_G, _seeds, _depth):
     return t2
 
 
-data = ['preferentialAttachment', 'dblp-2010', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP', 'coPapersCiteseer']
+data = ['preferentialAttachment', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP', 'coPapersCiteseer']
 
 for file_name in data:
     # cugraph RW
