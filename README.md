@@ -25,5 +25,6 @@ pip3 install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f h
 
 pip install dgl-cu111 -f https://data.dgl.ai/wheels/repo.html
 
-7 run DGL random walk, it is similar to step 4. 
+7 run DGL random walk, it is similar to step 4.
+
 python RW_DGL_benchmark.py
