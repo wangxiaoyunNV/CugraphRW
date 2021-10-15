@@ -10,7 +10,7 @@ qry = work_path + '/*.csv'
 files = glob.glob(qry)
 #print (files)
 methods = ['dgl','cugraph']
-nseeds  = ['1000', '3000', '5000', '10000', '20000', '40000', '75000', '100000']
+nseeds  = ['1000', '3000', '5000', '10000', '20000', '40000', '75000', '100000', '150000', '200000', '250000', '300000']
 datasets = ['as-Skitter', 'caidaRouterLevel', 'citationCiteseer', 'coAuthorsDBLP', 'coPapersDBLP', 'preferentialAttachment']
 
 result_fn = []
@@ -27,6 +27,9 @@ for data in datasets:
     for seed in nseeds:
         fn_cugraph = work_path + '/RW_cugraph_' + data + '_' + seed + '_.csv'
         fn_dgl = work_path + '/RW_dgl_' + data + '_' + seed + '_.csv'
+        if os.path.exists(fn_cugraph) == False or os.path.exists(fn_dgl) == False:
+            break 
+
         data_cugraph = pd.read_csv(fn_cugraph, header=None)
         data_dgl = pd.read_csv(fn_dgl, header=None)
         cugraph_gmean = stats.gmean(data_cugraph.iloc[:, 1:10], axis=1)

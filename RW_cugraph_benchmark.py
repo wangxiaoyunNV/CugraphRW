@@ -43,18 +43,22 @@ def run_rw(_G, _seeds, _depth):
     return t2
 
 
-data = ['preferentialAttachment', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP', 'coPapersCiteseer']
+data = ['preferentialAttachment', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP']
+#data = ['coAuthorsDBLP', 'coPapersDBLP']
 
 for file_name in data:
     # cugraph RW
     G_cu = read_and_create('./data/'+ file_name + '.mtx')
     nodes = G_cu.nodes().to_array().tolist()
-
+    num_nodes = G_cu.number_of_nodes() 
     # some parameters
-    num_seeds_ = [1000, 3000, 5000, 10000, 20000, 40000, 75000, 100000]
+    num_seeds_ = [1000, 3000, 5000, 10000, 20000, 40000, 75000, 100000, 150000, 200000, 250000, 300000]
     max_depth_ = np.arange(2,2**7+1,2)
     for max_depth in max_depth_:
         for num_seeds in num_seeds_:
+            if num_seeds >= num_nodes or ((file_name =='citationCiteseer' and num_seeds >200000) or (file_name =='coAuthorsDBLP' and num_seeds >= 150000)):
+                break 
+
             print('number of seeds:', num_seeds)
             print('RW length:', max_depth)
             t_cugraph = []

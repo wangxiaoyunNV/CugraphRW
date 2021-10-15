@@ -3,9 +3,6 @@ Random Walk test on Benchmark Datasets
 """
 import numpy as np
 import pandas as pd
-#  Import the modules
-import cugraph
-import cudf
 
 # system and other
 import gc
@@ -33,13 +30,13 @@ def run_dgl_rw(_G, _seeds, _depth):
     t2 = time.time() - t1
     return t2
 
-data = ['preferentialAttachment', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP', 'coPapersCiteseer']
+data = ['preferentialAttachment', 'as-Skitter', 'citationCiteseer', 'caidaRouterLevel', 'coAuthorsDBLP', 'coPapersDBLP']
 
 for file_name in data:
     # dgl RW
     G_dgl = read_dgl('./data/'+ file_name + '.mtx')
     # some parameters
-    num_seeds_ = [1000, 3000, 5000, 10000, 20000, 40000, 75000, 100000]
+    num_seeds_ = [1000, 3000, 5000, 10000, 20000, 40000, 75000, 100000, 150000, 200000, 250000, 300000]
     max_depth_ = np.arange(2,2**7+1,2)
     for max_depth in max_depth_:
         for num_seeds in num_seeds_:
