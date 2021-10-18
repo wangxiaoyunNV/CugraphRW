@@ -1,5 +1,5 @@
 # CugraphRW
-Originaly coding credit to Huang Xin, Xiaoyun made some changes
+Originaly coding credit to Huang Xin, Xiaoyun continued contributing it. 
 
 1 Donwload dataset
 
@@ -19,7 +19,13 @@ python RW_cugraph_benchmark.py
 
 5 you will get a bunch of .csv files.
 
-6 to run DGL sampling code, you need to install pytorch and DGL first inside of the container. 
+6 to run DGL sampling code, you need to install pytorch and DGL inside of the RAPIDS container. 
+
+The container is here.
+
+https://hub.docker.com/r/rapidsai/rapidsai/
+
+Then go into the container and run the pip conmands to install pytorch and DGL.
 
 pip3 install torch==1.9.1+cu111 torchvision==0.10.1+cu111 torchaudio==0.9.1 -f https://download.pytorch.org/whl/torch_stable.html
 
