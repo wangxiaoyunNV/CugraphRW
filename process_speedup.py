@@ -3,8 +3,8 @@ import os
 import glob
 from scipy import stats
 
-work_path = 'a100-results'
-write_path = 'a100_speedup/'
+work_path = 'rtx8000-result'
+write_path = 'rtx8000_speedup/'
 
 qry = work_path + '/*.csv'
 files = glob.glob(qry)
